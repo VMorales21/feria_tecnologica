@@ -60,10 +60,10 @@ feria-tecnologica-web/
 ## Flujo Git recomendado
 ```bash
 git clone URL_DEL_REPOSITORIO
-git checkout -b feature/nombre-modulo
+git checkout -b crisa
 # trabajar
 git add .
-git commit -m "feat: agrega modulo X"
+git commit -m "crisa: agrega modulo X"
 git push origin feature/nombre-modulo
 ```
 
