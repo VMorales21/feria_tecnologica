@@ -17,8 +17,18 @@
   }
 
   function renderPhoto(photo) {
-    const image = avatar.querySelector('img');
-    if (image) image.src = photo || '../img/perfil-saul.png';
+    const previous = avatar.querySelector('img');
+    const fallback = avatar.querySelector('svg');
+    if (previous) previous.remove();
+    if (!photo) {
+      if (fallback) fallback.style.display = 'block';
+      return;
+    }
+    if (fallback) fallback.style.display = 'none';
+    const image = document.createElement('img');
+    image.src = photo;
+    image.alt = 'Foto de perfil';
+    avatar.appendChild(image);
   }
 
   function readProfile() {
