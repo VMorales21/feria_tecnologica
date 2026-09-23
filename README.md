@@ -60,10 +60,10 @@ feria-tecnologica-web/
 ## Flujo Git recomendado
 ```bash
 git clone URL_DEL_REPOSITORIO
-git checkout -b feature/nombre-modulo
+git checkout -b CLAUDIA DOMINGUEZ VAZQUEZ 
 # trabajar
 git add .
-git commit -m "feat: agrega modulo X"
+git commit -m "CLAUDIA: agrega modulo X"
 git push origin feature/nombre-modulo
 ```
 
