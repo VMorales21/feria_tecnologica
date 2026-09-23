@@ -20,7 +20,7 @@ Proyecto base para la materia **Tópicos Selectos de Desarrollo Web**.
 
 ## Ramas sugeridas
 - feature/inicio
-- feature/login
+- yo feature/login
 - feature/registro
 - feature/perfil
 - feature/eventos
