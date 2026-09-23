@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripciones | Feria Tecnológica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Registro de Inscripciones</h1>
+        <p class="mb-0">Inscribe tu proyecto o participación en los eventos de la Feria Tecnológica.</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <!-- El alumno desarrolla aquí su módulo. -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card app-card p-4 p-md-5">
+              <form id="formInscripciones" action="#" method="POST">
+                
+                <!-- Datos Personales -->
+                <h4 class="mb-4 text-primary font-weight-bold">Datos del Participante</h4>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label font-weight-semibold">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. Isai Martinez" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="correo" class="form-label font-weight-semibold">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefono" class="form-label font-weight-semibold">Teléfono de Contacto</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="2221234567" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="institucion" class="form-label font-weight-semibold">Institución / Escuela</label>
+                    <input type="text" class="form-control" id="institucion" name="institucion" placeholder="Nombre de tu institución" required>
+                  </div>
+                </div>
+
+                <!-- Detalle de Participación -->
+                <h4 class="mb-4 text-primary font-weight-bold">Detalles de la Inscripción</h4>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label for="categoria" class="form-label font-weight-semibold">Categoría del Proyecto</label>
+                    <select class="form-select" id="categoria" name="categoria" required>
+                      <option value="" selected disabled>Selecciona una categoría</option>
+                      <option value="desarrollo-web">Desarrollo Web / Móvil</option>
+                      <option value="inteligencia-artificial">Inteligencia Artificial</option>
+                      <option value="redes-sistemas">Redes y Infraestructura</option>
+                      <option value="hardware-iot">Internet de las Cosas (IoT)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="modalidad" class="form-label font-weight-semibold">Modalidad de Participación</label>
+                    <select class="form-select" id="modalidad" name="modalidad" required>
+                      <option value="" selected disabled>Selecciona modalidad</option>
+                      <option value="individual">Individual</option>
+                      <option value="equipo">En Equipo</option>
+                      <option value="asistente">Asistente / Espectador</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="nombreProyecto" class="form-label font-weight-semibold">Nombre del Proyecto</label>
+                    <input type="text" class="form-control" id="nombreProyecto" name="nombreProyecto" placeholder="Título de la propuesta o prototipo">
+                  </div>
+                  <div class="col-12">
+                    <label for="descripcion" class="form-label font-weight-semibold">Resumen del Proyecto</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Describe brevemente de qué trata tu proyecto..."></textarea>
+                  </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="d-flex justify-content-end gap-2 pt-2">
+                  <button type="reset" class="btn btn-outline-secondary px-4">Limpiar</button>
+                  <button type="submit" class="btn btn-primary px-4">Completar Inscripción</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
