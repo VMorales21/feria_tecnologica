@@ -1,0 +1,17 @@
+<footer class="app-footer">
+  <div class="container py-4">
+    <div class="row g-4">
+      <div class="col-md-7">
+        <h5>Feria Tecnológica</h5>
+        <p class="mb-0">Plataforma web desarrollada como proyecto colaborativo de Tópicos Selectos de Desarrollo Web.</p>
+      </div>
+      <div class="col-md-5 text-md-end">
+        <a href="../index.html">Inicio</a>
+        <a href="../pages/contacto.html">Contacto</a>
+        <a href="../pages/acerca.html">Acerca del proyecto</a>
+      </div>
+    </div>
+    <hr>
+    <p class="small mb-0 text-center">© 2026 Feria Tecnológica. Proyecto académico.</p>
+  </div>
+</footer>
