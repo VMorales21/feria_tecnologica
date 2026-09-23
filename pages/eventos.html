@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo | Feria Tecnológica</title>
+  <title>Eventos | Feria Tecnológica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,19 +15,177 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Nombre del módulo</h1>
-        <p class="mb-0">Descripción breve del módulo.</p>
+        <h1>EVENTOS</h1>
+        <p class="mb-0">Elige un evento de tecnología e inicia sesión para entrar.</p>
       </div>
     </section>
+
     <section class="page-content">
       <div class="container">
-        <!-- El alumno desarrolla aquí su módulo. -->
+
+        <!-- Mensaje que aparece cuando el usuario entra a un evento -->
+        <div id="mensajeAcceso" class="alert alert-success d-none" role="alert"></div>
+
+        <div class="row g-4">
+
+          <!-- Evento 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Inteligencia Artificial</span>
+                <h3>Taller de IA</h3>
+                <p>Introducción a los modelos de inteligencia artificial y sus usos en la vida diaria.</p>
+                <p class="text-muted mb-3"><small>10 de octubre · Auditorio A</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Taller de IA">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Datos</span>
+                <h3>Análisis de Datos</h3>
+                <p>Cómo se analizan grandes cantidades de datos y para qué sirven las gráficas.</p>
+                <p class="text-muted mb-3"><small>11 de octubre · Laboratorio 2</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Análisis de Datos">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Publicaciones</span>
+                <h3>Artículos Tecnológicos</h3>
+                <p>Presentación de artículos y trabajos de investigación hechos por los alumnos.</p>
+                <p class="text-muted mb-3"><small>12 de octubre · Sala de usos múltiples</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Artículos Tecnológicos">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Seguridad</span>
+                <h3>Ciberseguridad</h3>
+                <p>Consejos básicos para proteger tus cuentas y navegar de forma segura.</p>
+                <p class="text-muted mb-3"><small>12 de octubre · Auditorio B</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Ciberseguridad">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Robótica</span>
+                <h3>Robótica Educativa</h3>
+                <p>Demostración de los robots armados y programados por los equipos participantes.</p>
+                <p class="text-muted mb-3"><small>13 de octubre · Patio central</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Robótica Educativa">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card app-card h-100">
+              <div class="card-body">
+                <span class="badge badge-project mb-3">Desarrollo Web</span>
+                <h3>Desarrollo Web</h3>
+                <p>Cómo se construye una página web con HTML, CSS y JavaScript.</p>
+                <p class="text-muted mb-3"><small>13 de octubre · Laboratorio 1</small></p>
+                <button class="btn btn-primary btn-entrar" data-evento="Desarrollo Web">Entrar al evento</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Ventana de login para entrar al evento elegido -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tituloModal">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <form id="formLogin">
+          <div class="modal-body">
+            <p class="text-muted">Evento seleccionado: <strong id="nombreEvento"></strong></p>
+
+            <div id="errorLogin" class="alert alert-danger d-none" role="alert">
+              Escribe tu usuario y tu contraseña.
+            </div>
+
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="usuario" placeholder="Tu usuario">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Tu contraseña">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div id="footer"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/main.js"></script>
+  <script>
+    // Guarda el evento que eligio el usuario
+    let eventoElegido = '';
+
+    const modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
+    const nombreEvento = document.getElementById('nombreEvento');
+    const errorLogin = document.getElementById('errorLogin');
+    const mensajeAcceso = document.getElementById('mensajeAcceso');
+    const formLogin = document.getElementById('formLogin');
+
+    // Al dar clic en "Entrar al evento" se abre la ventana de login
+    document.querySelectorAll('.btn-entrar').forEach(function (boton) {
+      boton.addEventListener('click', function () {
+        eventoElegido = boton.dataset.evento;
+        nombreEvento.textContent = eventoElegido;
+        errorLogin.classList.add('d-none');
+        formLogin.reset();
+        modalLogin.show();
+      });
+    });
+
+    // Al enviar el formulario se revisa que los campos no esten vacios
+    formLogin.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const usuario = document.getElementById('usuario').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (usuario === '' || password === '') {
+        errorLogin.classList.remove('d-none');
+        return;
+      }
+
+      modalLogin.hide();
+      mensajeAcceso.textContent = 'Bienvenido ' + usuario + ', ya entraste al evento: ' + eventoElegido;
+      mensajeAcceso.classList.remove('d-none');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
-    
