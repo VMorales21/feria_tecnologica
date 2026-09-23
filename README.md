@@ -60,10 +60,10 @@ feria-tecnologica-web/
 ## Flujo Git recomendado
 ```bash
 git clone URL_DEL_REPOSITORIO
-git checkout -b feature/nombre-modulo
+git checkout -b eliud
 # trabajar
-git add .
-git commit -m "feat: agrega modulo X"
+git add nombre del archivo que modificamos
+git commit -m "eliud: agregar modulo horarios "
 git push origin feature/nombre-modulo
 ```
 
