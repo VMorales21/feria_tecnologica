@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    
+    <!-- Encabezado -->
+    <div class="row mb-4">
+        <div class="col-12 text-center text-md-start d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <h2 class="fw-bold text-dark mb-1">Registro de Proyectos</h2>
+                <p class="text-muted mb-0">Gestiona y asigna nuevos proyectos a los equipos de trabajo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        
+        <!-- Formulario de Registro -->
+        <div class="col-lg-4">
+            <div class="card card-custom p-4">
+                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-plus-circle me-2"></i>Nuevo Proyecto</h5>
+                
+                <form id="formProyecto">
+                    <!-- Nombre del Proyecto -->
+                    <div class="mb-3">
+                        <label for="nombreProyecto" class="form-label font-weight-bold">Nombre del Proyecto</label>
+                        <input type="text" class="form-control" id="nombreProyecto" placeholder="Ej. Sistema de Control de Inventario" required>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="mb-3">
+                        <label for="descripcionProyecto" class="form-label">Descripción del Proyecto</label>
+                        <textarea class="form-control" id="descripcionProyecto" rows="3" placeholder="Breve resumen de los objetivos del proyecto..." required></textarea>
+                    </div>
+
+                    <!-- Nombre del Equipo -->
+                    <div class="mb-3">
+                        <label for="nombreEquipo" class="form-label">Nombre del Equipo</label>
+                        <input type="text" class="form-control" id="nombreEquipo" placeholder="Ej. Alpha Tech, DevTeam 01" required>
+                    </div>
+
+                    <!-- Líder del Equipo -->
+                    <div class="mb-3">
+                        <label for="liderEquipo" class="form-label">Líder del Equipo</label>
+                        <select class="form-select" id="liderEquipo" required>
+                            <option value="" selected disabled>Selecciona un líder...</option>
+                            <option value="Ana Martínez">Ana Martínez</option>
+                            <option value="Carlos Gómez">Carlos Gómez</option>
+                            <option value="Laura Rodríguez">Laura Rodríguez</option>
+                            <option value="Miguel Ángel López">Miguel Ángel López</option>
+                        </select>
+                    </div>
+
+                    <!-- Botón Submit -->
+                    <button type="submit" class="btn btn-primary w-100 mt-2">
+                        <i class="bi bi-save me-1"></i> Registrar Proyecto
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de Proyectos Registrados -->
+        <div class="col-lg-8">
+            <div class="card card-custom p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold text-dark mb-0"><i class="bi bi-folder2-open me-2"></i>Proyectos Registrados</h5>
+                    <span class="badge bg-primary rounded-pill" id="totalProyectos">2 Proyectos</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle" id="tablaProyectos">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Proyecto</th>
+                                <th>Descripción</th>
+                                <th>Equipo</th>
+                                <th>Líder</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-semibold text-dark">Studio Katanya Web</td>
+                                <td class="text-muted small">Plataforma web con vista previa en realidad aumentada.</td>
+                                ><span class="badge bg-secondary">Team AR/VR</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-person-circle text-primary me-2"></i>
+                                        <span>Carlos Gómez</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-danger border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold text-dark">App Móvil Citas</td>
+                                <td class="text-muted small">Aplicación móvil para la gestión de agendas e inventario.</td>
+                                <td><span class="badge bg-secondary">DevMobile</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-person-circle text-primary me-2"></i>
+                                        <span>Ana Martínez</span>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-danger border-0"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script de interacción simple -->
+<script>
+    const form = document.getElementById('formProyecto');
+    const tabla = document.getElementById('tablaProyectos').querySelector('tbody');
+    const totalBadge = document.getElementById('totalProyectos');
+
+    function actualizarContador() {
+        const filas = tabla.querySelectorAll('tr').length;
+        totalBadge.textContent = `${filas} Proyecto${filas !== 1 ? 's' : ''}`;
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Obtener valores
+        const nombre = document.getElementById('nombreProyecto').value;
+        const descripcion = document.getElementById('descripcionProyecto').value;
+        const equipo = document.getElementById('nombreEquipo').value;
+        const lider = document.getElementById('liderEquipo').value;
+
+        // Crear nueva fila
+        const nuevaFila = document.createElement('tr');
+        nuevaFila.innerHTML = `
+            <td class="fw-semibold text-dark">${nombre}</td>
+            <td class="text-muted small">${descripcion}</td>
+            <td><span class="badge bg-secondary">${equipo}</span></td>
+            <td>
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-person-circle text-primary me-2"></i>
+                    <span>${lider}</span>
+                </div>
+            </td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-outline-danger border-0" onclick="eliminarFila(this)"><i class="bi bi-trash"></i></button>
+            </td>
+        `;
+
+        tabla.appendChild(nuevaFila);
+        actualizarContador();
+
+        // Limpiar formulario
+        form.reset();
+    });
+
+    function eliminarFila(btn) {
+        btn.closest('tr').remove();
+        actualizarContador();
+    }
+</script>
+
+</body>
+</html>
