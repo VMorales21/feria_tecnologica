@@ -30,6 +30,114 @@
                 <label for="buscarIntegrante" class="form-label small text-muted fw-bold mb-1">Buscar integrante</label>
                 <input type="text" id="buscarIntegrante" class="form-control" placeholder="Buscar por nombre, correo o matrícula...">
               </div>
+              <!-- Filtro 1 equipos -->
+              <div class="col-lg-3 col-md-3">
+                <label for="filtroEquipo" class="form-label small text-muted fw-bold mb-1">Filtrar por equipo</label>
+                <select id="filtroEquipo" class="form-select">
+                  <option selected>Todos los equipos</option>
+                  <option value="1">funciona en mi pc</option>
+                  <option value="2">Pythons</option>
+                  <option value="3">Webes</option>
+                </select>
+              </div>
+
+              <!-- Filtro 2 roles -->
+              <div class="col-lg-2 col-md-3">
+                <label for="filtroRol" class="form-label small text-muted fw-bold mb-1">Rol</label>
+                <select id="filtroRol" class="form-select">
+                  <option selected>Todos</option>
+                  <option value="1">Líder</option>
+                  <option value="2">Desarrollador</option>
+                  <option value="3">Diseñador</option>
+                </select>
+              </div>
+
+              <!-- Botón agregar -->
+              <div class="col-lg-2 col-md-12 d-flex align-items-end">
+                <button type="button" class="btn btn-primary w-100 mt-md-0 mt-2" data-bs-toggle="modal" data-bs-target="#modalAgregarIntegrante">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de integrantes -->
+        <div class="card app-card">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" class="ps-4">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Equipo</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col" class="text-end pe-4">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Karla Angelica Rojano Perez</div>
+                      <small class="text-muted">Matrícula: 23240010</small>
+                    </td>
+                    <td>angie@gmail.com</td>
+                    <td>funciona en mi pc</td>
+                    <td><span class="badge bg-primary">Líder</span></td>
+                    <td><span class="badge bg-success">Activo</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Jonathan Goiz Arana</div>
+                      <small class="text-muted">Matrícula: 23240013</small>
+                    </td>
+                    <td>Goiz@gmail.com</td>
+                    <td>funciona en mi pc</td>
+                    <td><span class="badge bg-secondary">Desarrollador</span></td>
+                    <td><span class="badge bg-success">Activo</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Kira wewe</div>
+                      <small class="text-muted">Matrícula: 23240030</small>
+                    </td>
+                    <td>lkeke@gmail.com</td>
+                    <td>Webes</td>
+                    <td><span class="badge bg-info text-dark">Diseñadora</span></td>
+                    <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Kiki Goiz</div>
+                      <small class="text-muted">Matrícula: 23240020</small>
+                    </td>
+                    <td>Kipokio@gmail.com</td>
+                    <td>Webes</td>
+                    <td><span class="badge bg-info text-dark">Líder</span></td>
+                    <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
       </div>
     </section>
   </main>
