@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo | Feria Tecnológica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>integrantes</h1>
+        <p class="mb-0">Aqui se revisan los integrandes existentes y se agregan.</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <!-- El alumno desarrolla aquí su módulo. -->
+         <div class="card app-card mb-4">
+          <div class="card-body p-4">
+            <div class="row g-3 align-items-center">
+              <!-- Búsqueda -->
+              <div class="col-lg-5 col-md-6">
+                <label for="buscarIntegrante" class="form-label small text-muted fw-bold mb-1">Buscar integrante</label>
+                <input type="text" id="buscarIntegrante" class="form-control" placeholder="Buscar por nombre, correo o matrícula...">
+              </div>
+              <!-- Filtro 1 equipos -->
+              <div class="col-lg-3 col-md-3">
+                <label for="filtroEquipo" class="form-label small text-muted fw-bold mb-1">Filtrar por equipo</label>
+                <select id="filtroEquipo" class="form-select">
+                  <option selected>Todos los equipos</option>
+                  <option value="1">funciona en mi pc</option>
+                  <option value="2">Pythons</option>
+                  <option value="3">Webes</option>
+                </select>
+              </div>
+
+              <!-- Filtro 2 roles -->
+              <div class="col-lg-2 col-md-3">
+                <label for="filtroRol" class="form-label small text-muted fw-bold mb-1">Rol</label>
+                <select id="filtroRol" class="form-select">
+                  <option selected>Todos</option>
+                  <option value="1">Líder</option>
+                  <option value="2">Desarrollador</option>
+                  <option value="3">Diseñador</option>
+                </select>
+              </div>
+
+              <!-- Botón agregar -->
+              <div class="col-lg-2 col-md-12 d-flex align-items-end">
+                <button type="button" class="btn btn-primary w-100 mt-md-0 mt-2" data-bs-toggle="modal" data-bs-target="#modalAgregarIntegrante">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de integrantes -->
+        <div class="card app-card">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" class="ps-4">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Equipo</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col" class="text-end pe-4">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Ana Martínez</div>
+                      <small class="text-muted">Matrícula: 20210341</small>
+                    </td>
+                    <td>ana.martinez@email.com</td>
+                    <td>Alpha Tech</td>
+                    <td><span class="badge bg-primary">Líder</span></td>
+                    <td><span class="badge bg-success">Activo</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Carlos Gómez</div>
+                      <small class="text-muted">Matrícula: 20210892</small>
+                    </td>
+                    <td>carlos.gomez@email.com</td>
+                    <td>CyberDevs</td>
+                    <td><span class="badge bg-secondary">Desarrollador</span></td>
+                    <td><span class="badge bg-success">Activo</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold">Lucía Fernández</div>
+                      <small class="text-muted">Matrícula: 20210512</small>
+                    </td>
+                    <td>lucia.f@email.com</td>
+                    <td>Innovadores Web</td>
+                    <td><span class="badge bg-info text-dark">Diseñadora</span></td>
+                    <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                    <td class="text-end pe-4">
+                      <button class="btn btn-sm btn-outline-secondary me-1">Editar</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
